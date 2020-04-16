@@ -1,0 +1,15 @@
+data(iris)
+iris2<-subset(iris, Species!="setosa")
+iris2$Species<-factor(iris2$Species)
+lout<-glm(Species~., family="binomial", data=iris2)
+summary(lout)
+
+
+lout1<-glm(Species~., family="binomial", data=iris2)
+summary(lout1)
+lout2<-glm(Species~Petal.Length+Petal.Width, family="binomial", data=iris2)
+summary(lout2)
+iris2$res1<-ifelse(lout1$fitted.values > 0.5, "virginica","versicolor")
+iris2$res2<-ifelse(lout2$fitted.values > 0.5, "virginica","versicolor")
+xtabs(~res1+Species,data=iris2)
+xtabs(~res2+Species,data=iris2)

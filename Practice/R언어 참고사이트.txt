@@ -1,0 +1,5 @@
+http://dev.epiloum.net/1546
+10분 만에 살펴보는 R 기초문법
+
+https://www.programcreek.com/2014/01/vector-array-list-and-data-frame-in-r/
+데이터 구조 종류
